@@ -19,8 +19,13 @@
 	</div>
 
 	<h2>Content from Firebase</h2>
+
 	<div class="col-md-3">
-		<pre *ngFor="let item of items | async">{{item.content}}</pre>
+		<span >
+			 <ul *ngFor="let item of items; let i = index">
+				 <li (click)="deleteObject(item.content)">  {{ item.content }} {{item.$key }} </li>
+			 </ul> 
+		</span>
 	</div>
 </div>
 
